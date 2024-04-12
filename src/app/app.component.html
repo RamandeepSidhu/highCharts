@@ -1,47 +1,44 @@
 <div class="container">
-<div class="row">
-  <!-- Area Chart -->
-  <div class="col-6">   
-<figure class="highcharts-figure">
-  <div id="container"></div>
-</figure>
-  </div>
-    <!-- Bar Chart -->
-    <div class="col-6">
+  <div class="row">
+    <!-- Area Chart -->
+    <div class="col-lg-6 col-md-12 col-sm-12">
       <figure class="highcharts-figure">
-        <div id="barGraph"></div>
+        <div id="container" style="width: 100%;"></div>
       </figure>
     </div>
-    
-</div>
-<div class="row">
-<div class="col-6">
-  <figure class="highcharts-figure">
-    <div id="PieChart"></div>
-  </figure>
-</div>
-
-<div class="col-6">
-  <figure class="highcharts-figure">
-    <div id="maleFemale"></div>
-  </figure>
-</div>
-</div>
-<div class="row">
-  <div class="col-6">
-    <figure class="highcharts-figure">
-      <div id="agePrecentage"></div>
-    </figure>
-
-
+    <!-- Bar Chart -->
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <figure class="highcharts-figure">
+        <div id="barGraph" style="width: 100%;"></div>
+      </figure>
+    </div>
   </div>
-  <div class="col-6">
-    <figure class="highcharts-figure">
-      <div id="emotionsBar"></div>
-    </figure>
-
-
+  <div class="row">
+    <!-- Pie Chart -->
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <figure class="highcharts-figure">
+        <div id="PieChart" style="width: 100%;"></div>
+      </figure>
+    </div>
+    <!-- Male/Female Chart -->
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <figure class="highcharts-figure">
+        <div id="maleFemale" style="width: 100%;"></div>
+      </figure>
+    </div>
+  </div>
+  <div class="row">
+    <!-- Age Percentage Chart -->
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <figure class="highcharts-figure">
+        <div id="agePrecentage" style="width: 100%;"></div>
+      </figure>
+    </div>
+    <!-- Emotions Bar Chart -->
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <figure class="highcharts-figure">
+        <div id="emotionsBar" style="width: 100%;"></div>
+      </figure>
+    </div>
   </div>
 </div>
-</div>
-<router-outlet></router-outlet>
