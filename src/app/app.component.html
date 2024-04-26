@@ -41,4 +41,32 @@
       </figure>
     </div>
   </div>
-</div>
+  
+  <div class="row">
+    <!-- Age Percentage Chart -->
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <figure class="highcharts-figure">
+        <div id="AgeArea" style="width: 100%;"></div>
+      </figure>
+    </div>
+    <!-- Emotions Bar Chart -->
+    <div class="col-lg-6 col-md-12 col-sm-12">
+        <figure class="highcharts-figure">
+          <div id="DonutChart" style="width: 100%;"></div>
+        </figure>
+      </div>
+  </div>
+  
+  <div class="mc-field-group input-group"><strong>What Kind Of Shoes Are You Interested In?</strong><br>
+	
+    <ul>
+      <li><input id="selectAll" type="checkbox" [(ngModel)]="selectAllChecked" (change)="selectAllChanged($event)">
+        <label for='selectAll'>Select All</label></li>
+        <li *ngFor="let checkbox of checkboxes">
+          <input [id]="checkbox.id" type="checkbox" [(ngModel)]="checkbox.checked" (click)="checkboxChanged(checkbox.id)">
+        <label [for]="checkbox.id">{{ checkbox.label }}</label>
+    </li>
+    </ul>
+  </div>
+
+</div> 

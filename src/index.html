@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -11,5 +11,288 @@
 </head>
 <body>
   <app-root></app-root>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSAP scrollTrigger</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap");
+
+    *:before,
+    *:after {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Signika Negative", sans-serif;
+      font-weight: 300;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: block;
+      position: relative;
+    }
+
+    section {
+      min-height: 80vh;
+      width: 100%;
+      max-width: 100%;
+      margin: 0px;
+      display: block;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .first {
+      background-color: red;
+      color: white;
+    }
+
+    .last {
+      background-color: blue;
+      color: white;
+    }
+
+    .layer-story-box {
+      background-color: aqua;
+      position: relative;
+      padding: 40px;
+      overflow: hidden;
+      width: calc(100% - 40px)
+    }
+
+    .layer-story-pinned-content {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      height: 100vh;
+      padding-bottom: 4rem;
+      padding-top: 2rem;
+      width: 100%;
+    }
+
+    .layer-story-image-wrapper {
+      position: relative;
+      margin: 0px;
+      padding: 0px;
+      width: 100%;
+    }
+
+    .layer-story-image,
+    .layer-story-main-image {
+      background-color: grey;
+      width: calc(100% - 20px);
+      height: 500px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .layer-story-content-wrapper {
+      position: absolute;
+      max-width: 100%;
+      height: 100%;
+      z-index: 200;
+      color: black !important;
+      z-index: 99;
+    }
+
+    .layer-story-content-inner {
+      position: relative;
+      color: black !important;
+      top: 800px;
+      font-size: 18px;
+    font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GSAP scrollTrigger</h1>
+    <h3>- video animation 001 -</h3>
+  </header>
+  <div class="container">
+    <section class="first">
+      <h2>First</h2>
+    </section>
+    <section class="layer-story-box">
+      <div class="intro">
+        <h2>Layer Story</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.
+          Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam
+          eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia
+          consectetur. </p>
+      </div>
+      <div class="layer-story-pinned-content">
+        <div class="layer-story-image-wrapper">
+          <figure class="image_container image-0 layer-story-main-image" id="layer-1">
+            <video class="video-container" tabindex="0" autobuffer preload>
+              <source src="https://d5ofx1dg93v3j.cloudfront.net/wp-content/uploads/2024/04/23104650/Step-1.mp4"
+                type="video/mp4">
+            </video>
+          </figure>
+          <figure class="image_container image-1 layer-story-image" id="layer-2">
+            <video class="video-container" tabindex="0" autobuffer preload>
+              <source src="https://d5ofx1dg93v3j.cloudfront.net/wp-content/uploads/2024/04/23104656/Step-2.mp4"
+                type="video/mp4">
+            </video>
+          </figure>
+          <figure class="image_container image-2 layer-story-image" id="layer-3">
+            <video class="video-container" tabindex="0" autobuffer preload>
+              <source src="https://d5ofx1dg93v3j.cloudfront.net/wp-content/uploads/2024/04/23104658/Step-3.mp4"
+                type="video/mp4">
+            </video>
+          </figure>
+          <figure class="image_container image-3 layer-story-image" id="layer-4">
+            <video class="video-container" tabindex="0" autobuffer preload>
+              <source src="https://d5ofx1dg93v3j.cloudfront.net/wp-content/uploads/2024/04/23104658/Step-3.mp4"
+                type="video/mp4">
+            </video>
+          </figure>
+          <figure class="image_container image-4 layer-story-image" id="layer-5">
+            <video class="video-container" tabindex="0" autobuffer preload>
+              <source src="https://d5ofx1dg93v3j.cloudfront.net/wp-content/uploads/2024/04/23104703/Step-4.mp4"
+                type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="layer-story-content-wrapper" id="layer-1">
+          <div class="layer-story-content-inner">
+            <h4 class="layer-story-content-label">Subheadline 1</h4>
+            <h3 class="layer-story-content-headline">Headline 1</h3>
+            <div class="layer-story-content-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam
+              lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.
+              Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt
+              congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. </div>
+          </div>
+        </div>
+        <div class="layer-story-content-wrapper" id="layer-2">
+          <div class="layer-story-content-inner">
+            <h4 class="layer-story-content-label">Subheadline 2</h4>
+            <h3 class="layer-story-content-headline">Headline 2</h3>
+            <div class="layer-story-content-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam
+              lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.
+              Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt
+              congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. </div>
+          </div>
+        </div>
+        <div class="layer-story-content-wrapper" id="layer-3">
+          <div class="layer-story-content-inner">
+            <h4 class="layer-story-content-label">Subheadline 3</h4>
+            <h3 class="layer-story-content-headline">Headline 3</h3>
+            <div class="layer-story-content-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam
+              lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.
+              Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt
+              congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. </div>
+          </div>
+        </div>
+        <div class="layer-story-content-wrapper" id="layer-4">
+          <div class="layer-story-content-inner">
+            <h4 class="layer-story-content-label">Subheadline 4</h4>
+            <h3 class="layer-story-content-headline">Headline 4</h3>
+            <div class="layer-story-content-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam
+              lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.
+              Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt
+              congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. </div>
+          </div>
+        </div>
+        <div class="layer-story-content-wrapper" id="layer-5">
+          <div class="layer-story-content-inner">
+            <h4 class="layer-story-content-label">Subheadline 5</h4>
+            <h3 class="layer-story-content-headline">Headline 5</h3>
+            <div class="layer-story-content-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam
+              lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.
+              Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt
+              congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. </div>
+          </div>
+        </div>
+    </section>
+    <section class="last">
+      <h2>Last</h2>
+    </section>
+  </div>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    const videos = [];
+
+    function playOrPauseVideo(id, play) {
+      const video = document.getElementById(id);
+      if (video) {
+        if (play) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    }
+
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".layer-story-pinned-content",
+        scrub: true,
+        pin: true,
+        start: "top 30",
+        markers: true,
+        onUpdate: (self) => {
+          const layers = document.querySelectorAll('.layer-story-content-wrapper');
+          const videos = document.querySelectorAll('.video-container');
+          layers.forEach((layer, index) => {
+            const video = videos[index];
+            if (Math.round(self.progress * 100) >= index * (100 / layers.length) && !video.playing) {
+              video.play();
+            } else if (Math.round(self.progress * 100) < index * (100 / layers.length) && video.playing) {
+              video.pause();
+            }
+          });
+        }
+      }
+    });
+
+    tl.from(
+      ".layer-story-content-wrapper",
+      { y: 20, autoAlpha: 0, stagger: 0.5 },
+      0
+    ).to(
+      ".layer-story-content-wrapper",
+      {
+        y: 0,
+        autoAlpha: 0,
+        stagger: 0.5
+      },
+      0.4
+    );
+    tl.from(
+      ".layer-story-image",
+      { y: 0, autoAlpha: 0, stagger: 0.5 },
+      0
+    ).to(
+      ".layer-story-image",
+      {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.5
+      },
+      0.4
+    );
+
+  </script>
 </body>
 </html>
