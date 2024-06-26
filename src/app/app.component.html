@@ -1,4 +1,6 @@
 <div class="container">
+  <app-my-ad-spots></app-my-ad-spots>
+  <button type="button" class="btn btn" routerLink="/test">test</button>
   <div class="row">
     <!-- Area Chart -->
     <div class="col-lg-6 col-md-12 col-sm-12">
@@ -55,18 +57,6 @@
           <div id="DonutChart" style="width: 100%;"></div>
         </figure>
       </div>
-  </div>
-  
-  <div class="mc-field-group input-group"><strong>What Kind Of Shoes Are You Interested In?</strong><br>
-	
-    <ul>
-      <li><input id="selectAll" type="checkbox" [(ngModel)]="selectAllChecked" (change)="selectAllChanged($event)">
-        <label for='selectAll'>Select All</label></li>
-        <li *ngFor="let checkbox of checkboxes">
-          <input [id]="checkbox.id" type="checkbox" [(ngModel)]="checkbox.checked" (click)="checkboxChanged(checkbox.id)">
-        <label [for]="checkbox.id">{{ checkbox.label }}</label>
-    </li>
-    </ul>
   </div>
 
 </div> 
